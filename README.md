@@ -1,6 +1,8 @@
 # tools
 golang common tools
 
+[![Build Status](https://www.travis-ci.org/wangsongyan/tools.svg?branch=master)](http://travis-ci.org/wangsongyan/tools)
+
 ### date
 日期相关函数
 
