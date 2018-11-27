@@ -39,7 +39,7 @@ func Validate(id string) bool {
 	if !validateDate(id[6:14]) {
 		return false
 	}
-	code, err = sumVerifyCode(id[:17])
+	code, err = SumVerifyCode(id[:17])
 	if err != nil {
 		return false
 	}
@@ -62,7 +62,7 @@ func Convert15To18(id string) (idstr string, err error) {
 		return
 	}
 	id = id[:6] + "19" + id[6:]
-	code, err = sumVerifyCode(id)
+	code, err = SumVerifyCode(id)
 	if err != nil {
 		return
 	}
@@ -81,7 +81,7 @@ func validateDate(birth string) bool {
 	return birthdate.After(startTime) && birthdate.Before(time.Now())
 }
 
-func sumVerifyCode(id string) (code string, err error) {
+func SumVerifyCode(id string) (code string, err error) {
 	if len(id) < 17 {
 		err = LENGTH_17_ERR
 		return
