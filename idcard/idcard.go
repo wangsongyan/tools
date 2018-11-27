@@ -2,7 +2,6 @@ package idcard
 
 import (
 	"errors"
-	"fmt"
 	"strconv"
 	"strings"
 	"time"
@@ -79,7 +78,6 @@ func validateDate(birth string) bool {
 	if err != nil {
 		return false
 	}
-	fmt.Println(birthdate)
 	return birthdate.After(startTime) && birthdate.Before(time.Now())
 }
 
