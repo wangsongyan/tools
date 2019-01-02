@@ -12,5 +12,8 @@ golang common tools
 ### mail
 smtp邮件发送
 
+### sms
+阿里大于短信发送
+
 ### templates
 字符串模板渲染
