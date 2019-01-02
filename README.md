@@ -6,14 +6,14 @@ golang common tools
 ### date
 日期相关函数
 
+### dayu
+阿里大于短信发送
+
 ### idcard
 身份证号验证及转换
 
 ### mail
 smtp邮件发送
-
-### sms
-阿里大于短信发送
 
 ### templates
 字符串模板渲染
