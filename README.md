@@ -32,10 +32,11 @@ func main() {
 		templateParam = "{\"customer\":\"test\"}"
 		templateCode  = "SMS_71390007"
 		format        = "JSON"
+		outId         = 123
 		err           error
 		bodyBytes     []byte
 	)
-	bodyBytes, err = dayu.SendSms(accessKeyId, accessSecret, signName, phoneNumbers, templateParam, templateCode, format, "")
+	bodyBytes, err = dayu.SendSms(accessKeyId, accessSecret, signName, phoneNumbers, templateParam, templateCode, format, outId)
 	if err != nil {
 		log.Println(err)
 		return
