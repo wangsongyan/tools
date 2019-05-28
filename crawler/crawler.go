@@ -9,13 +9,12 @@ import (
 	"net/http/cookiejar"
 	"net/url"
 	"strings"
-
-	"github.com/kataras/iris/context"
 )
 
 const (
-	CONTENT_TYPE_JSON = "application/json"
-	CONTENT_TYPE_FORM = "application/x-www-form-urlencoded"
+	ContentTypeHeaderKey = "Content-Type"
+	CONTENT_TYPE_JSON    = "application/json"
+	CONTENT_TYPE_FORM    = "application/x-www-form-urlencoded"
 	//CONTENT_TYPE_OCTET = "application/octet-stream"
 	//DEFAULT_USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/74.0.3729.131 Safari/537.36"
 )
@@ -64,7 +63,7 @@ func (app *App) DoPostJson(requrl string, headers H, body interface{}) (data []b
 	if nil == headers {
 		headers = make(H)
 	}
-	headers[context.ContentTypeHeaderKey] = CONTENT_TYPE_JSON
+	headers[ContentTypeHeaderKey] = CONTENT_TYPE_JSON
 	data, err = app.DoPost(requrl, headers, bytes.NewReader(data))
 	return
 }
@@ -79,7 +78,7 @@ func (app *App) DoPostForm(requrl string, headers, params H) (data []byte, err e
 	if nil == headers {
 		headers = make(H)
 	}
-	headers[context.ContentTypeHeaderKey] = CONTENT_TYPE_FORM
+	headers[ContentTypeHeaderKey] = CONTENT_TYPE_FORM
 	data, err = app.DoPost(requrl, headers, strings.NewReader(u.Encode()))
 	return
 }
